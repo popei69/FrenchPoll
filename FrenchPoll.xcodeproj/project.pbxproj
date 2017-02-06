@@ -1,0 +1,419 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14C417FD1E492CD2001DDF8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C417FC1E492CD2001DDF8C /* AppDelegate.swift */; };
+		14C417FF1E492CD2001DDF8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C417FE1E492CD2001DDF8C /* ViewController.swift */; };
+		14C418021E492CD2001DDF8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C418001E492CD2001DDF8C /* Main.storyboard */; };
+		14C418041E492CD2001DDF8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14C418031E492CD2001DDF8C /* Assets.xcassets */; };
+		14C418071E492CD2001DDF8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C418051E492CD2001DDF8C /* LaunchScreen.storyboard */; };
+		14C418121E492CD2001DDF8C /* FrenchPollTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C418111E492CD2001DDF8C /* FrenchPollTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		14C4180E1E492CD2001DDF8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14C417F11E492CD2001DDF8C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14C417F81E492CD2001DDF8C;
+			remoteInfo = FrenchPoll;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		14C417F91E492CD2001DDF8C /* FrenchPoll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrenchPoll.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		14C417FC1E492CD2001DDF8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		14C417FE1E492CD2001DDF8C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		14C418011E492CD2001DDF8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		14C418031E492CD2001DDF8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		14C418061E492CD2001DDF8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		14C418081E492CD2001DDF8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14C4180D1E492CD2001DDF8C /* FrenchPollTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FrenchPollTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		14C418111E492CD2001DDF8C /* FrenchPollTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrenchPollTests.swift; sourceTree = "<group>"; };
+		14C418131E492CD2001DDF8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		14C417F61E492CD2001DDF8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14C4180A1E492CD2001DDF8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14C417F01E492CD2001DDF8C = {
+			isa = PBXGroup;
+			children = (
+				14C417FB1E492CD2001DDF8C /* FrenchPoll */,
+				14C418101E492CD2001DDF8C /* FrenchPollTests */,
+				14C417FA1E492CD2001DDF8C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		14C417FA1E492CD2001DDF8C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				14C417F91E492CD2001DDF8C /* FrenchPoll.app */,
+				14C4180D1E492CD2001DDF8C /* FrenchPollTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		14C417FB1E492CD2001DDF8C /* FrenchPoll */ = {
+			isa = PBXGroup;
+			children = (
+				14C417FC1E492CD2001DDF8C /* AppDelegate.swift */,
+				14C417FE1E492CD2001DDF8C /* ViewController.swift */,
+				14C418001E492CD2001DDF8C /* Main.storyboard */,
+				14C418031E492CD2001DDF8C /* Assets.xcassets */,
+				14C418051E492CD2001DDF8C /* LaunchScreen.storyboard */,
+				14C418081E492CD2001DDF8C /* Info.plist */,
+			);
+			path = FrenchPoll;
+			sourceTree = "<group>";
+		};
+		14C418101E492CD2001DDF8C /* FrenchPollTests */ = {
+			isa = PBXGroup;
+			children = (
+				14C418111E492CD2001DDF8C /* FrenchPollTests.swift */,
+				14C418131E492CD2001DDF8C /* Info.plist */,
+			);
+			path = FrenchPollTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		14C417F81E492CD2001DDF8C /* FrenchPoll */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14C418161E492CD2001DDF8C /* Build configuration list for PBXNativeTarget "FrenchPoll" */;
+			buildPhases = (
+				14C417F51E492CD2001DDF8C /* Sources */,
+				14C417F61E492CD2001DDF8C /* Frameworks */,
+				14C417F71E492CD2001DDF8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FrenchPoll;
+			productName = FrenchPoll;
+			productReference = 14C417F91E492CD2001DDF8C /* FrenchPoll.app */;
+			productType = "com.apple.product-type.application";
+		};
+		14C4180C1E492CD2001DDF8C /* FrenchPollTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14C418191E492CD2001DDF8C /* Build configuration list for PBXNativeTarget "FrenchPollTests" */;
+			buildPhases = (
+				14C418091E492CD2001DDF8C /* Sources */,
+				14C4180A1E492CD2001DDF8C /* Frameworks */,
+				14C4180B1E492CD2001DDF8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				14C4180F1E492CD2001DDF8C /* PBXTargetDependency */,
+			);
+			name = FrenchPollTests;
+			productName = FrenchPollTests;
+			productReference = 14C4180D1E492CD2001DDF8C /* FrenchPollTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		14C417F11E492CD2001DDF8C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Benoit PASQUIER";
+				TargetAttributes = {
+					14C417F81E492CD2001DDF8C = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+					};
+					14C4180C1E492CD2001DDF8C = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 14C417F81E492CD2001DDF8C;
+					};
+				};
+			};
+			buildConfigurationList = 14C417F41E492CD2001DDF8C /* Build configuration list for PBXProject "FrenchPoll" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 14C417F01E492CD2001DDF8C;
+			productRefGroup = 14C417FA1E492CD2001DDF8C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				14C417F81E492CD2001DDF8C /* FrenchPoll */,
+				14C4180C1E492CD2001DDF8C /* FrenchPollTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		14C417F71E492CD2001DDF8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14C418071E492CD2001DDF8C /* LaunchScreen.storyboard in Resources */,
+				14C418041E492CD2001DDF8C /* Assets.xcassets in Resources */,
+				14C418021E492CD2001DDF8C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14C4180B1E492CD2001DDF8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		14C417F51E492CD2001DDF8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14C417FF1E492CD2001DDF8C /* ViewController.swift in Sources */,
+				14C417FD1E492CD2001DDF8C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14C418091E492CD2001DDF8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14C418121E492CD2001DDF8C /* FrenchPollTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		14C4180F1E492CD2001DDF8C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14C417F81E492CD2001DDF8C /* FrenchPoll */;
+			targetProxy = 14C4180E1E492CD2001DDF8C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		14C418001E492CD2001DDF8C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14C418011E492CD2001DDF8C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		14C418051E492CD2001DDF8C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14C418061E492CD2001DDF8C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		14C418141E492CD2001DDF8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		14C418151E492CD2001DDF8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		14C418171E492CD2001DDF8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FrenchPoll/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = fr.benoitpasquier.FrenchPoll;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		14C418181E492CD2001DDF8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FrenchPoll/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = fr.benoitpasquier.FrenchPoll;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		14C4181A1E492CD2001DDF8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = FrenchPollTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = fr.benoitpasquier.FrenchPollTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FrenchPoll.app/FrenchPoll";
+			};
+			name = Debug;
+		};
+		14C4181B1E492CD2001DDF8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = FrenchPollTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = fr.benoitpasquier.FrenchPollTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FrenchPoll.app/FrenchPoll";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		14C417F41E492CD2001DDF8C /* Build configuration list for PBXProject "FrenchPoll" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14C418141E492CD2001DDF8C /* Debug */,
+				14C418151E492CD2001DDF8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14C418161E492CD2001DDF8C /* Build configuration list for PBXNativeTarget "FrenchPoll" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14C418171E492CD2001DDF8C /* Debug */,
+				14C418181E492CD2001DDF8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		14C418191E492CD2001DDF8C /* Build configuration list for PBXNativeTarget "FrenchPollTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14C4181A1E492CD2001DDF8C /* Debug */,
+				14C4181B1E492CD2001DDF8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 14C417F11E492CD2001DDF8C /* Project object */;
+}
