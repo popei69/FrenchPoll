@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1422BD4B1E4A2A59002E77B5 /* CandidateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1422BD4A1E4A2A59002E77B5 /* CandidateCell.swift */; };
 		14C417FD1E492CD2001DDF8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C417FC1E492CD2001DDF8C /* AppDelegate.swift */; };
 		14C417FF1E492CD2001DDF8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C417FE1E492CD2001DDF8C /* ViewController.swift */; };
 		14C418021E492CD2001DDF8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C418001E492CD2001DDF8C /* Main.storyboard */; };
 		14C418041E492CD2001DDF8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14C418031E492CD2001DDF8C /* Assets.xcassets */; };
 		14C418071E492CD2001DDF8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C418051E492CD2001DDF8C /* LaunchScreen.storyboard */; };
 		14C418121E492CD2001DDF8C /* FrenchPollTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C418111E492CD2001DDF8C /* FrenchPollTests.swift */; };
+		14C4181D1E492FF5001DDF8C /* Candidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C4181C1E492FF5001DDF8C /* Candidate.swift */; };
+		61CEE7FD2197477F4B0B0D98 /* Pods_FrenchPollTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F546849F5349981D96391B0A /* Pods_FrenchPollTests.framework */; };
+		BE16A06579E62A91151A0E77 /* Pods_FrenchPoll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2E3263F9A675A318AAB1F8 /* Pods_FrenchPoll.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1422BD4A1E4A2A59002E77B5 /* CandidateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateCell.swift; sourceTree = "<group>"; };
 		14C417F91E492CD2001DDF8C /* FrenchPoll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrenchPoll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C417FC1E492CD2001DDF8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14C417FE1E492CD2001DDF8C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +41,13 @@
 		14C4180D1E492CD2001DDF8C /* FrenchPollTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FrenchPollTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C418111E492CD2001DDF8C /* FrenchPollTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrenchPollTests.swift; sourceTree = "<group>"; };
 		14C418131E492CD2001DDF8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14C4181C1E492FF5001DDF8C /* Candidate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Candidate.swift; path = Model/Candidate.swift; sourceTree = "<group>"; };
+		5082AA4A3B58CB0D83ECB628 /* Pods-FrenchPoll.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FrenchPoll.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FrenchPoll/Pods-FrenchPoll.debug.xcconfig"; sourceTree = "<group>"; };
+		9B0418AE653FC8F9237CEA10 /* Pods-FrenchPollTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FrenchPollTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FrenchPollTests/Pods-FrenchPollTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CC2E3263F9A675A318AAB1F8 /* Pods_FrenchPoll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FrenchPoll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBD0D7D9CD4FC3DF2F4282D1 /* Pods-FrenchPollTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FrenchPollTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FrenchPollTests/Pods-FrenchPollTests.release.xcconfig"; sourceTree = "<group>"; };
+		EE21226EA775CB6EEAB24B6D /* Pods-FrenchPoll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FrenchPoll.release.xcconfig"; path = "Pods/Target Support Files/Pods-FrenchPoll/Pods-FrenchPoll.release.xcconfig"; sourceTree = "<group>"; };
+		F546849F5349981D96391B0A /* Pods_FrenchPollTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FrenchPollTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE16A06579E62A91151A0E77 /* Pods_FrenchPoll.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,18 +63,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61CEE7FD2197477F4B0B0D98 /* Pods_FrenchPollTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		124605F65A8C38482D3F538A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5082AA4A3B58CB0D83ECB628 /* Pods-FrenchPoll.debug.xcconfig */,
+				EE21226EA775CB6EEAB24B6D /* Pods-FrenchPoll.release.xcconfig */,
+				9B0418AE653FC8F9237CEA10 /* Pods-FrenchPollTests.debug.xcconfig */,
+				DBD0D7D9CD4FC3DF2F4282D1 /* Pods-FrenchPollTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		1422BD4C1E4A2A65002E77B5 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				1422BD4A1E4A2A59002E77B5 /* CandidateCell.swift */,
+			);
+			name = Design;
+			sourceTree = "<group>";
+		};
 		14C417F01E492CD2001DDF8C = {
 			isa = PBXGroup;
 			children = (
 				14C417FB1E492CD2001DDF8C /* FrenchPoll */,
 				14C418101E492CD2001DDF8C /* FrenchPollTests */,
 				14C417FA1E492CD2001DDF8C /* Products */,
+				124605F65A8C38482D3F538A /* Pods */,
+				ED33B4F9578821EF35750051 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +112,8 @@
 		14C417FB1E492CD2001DDF8C /* FrenchPoll */ = {
 			isa = PBXGroup;
 			children = (
+				1422BD4C1E4A2A65002E77B5 /* Design */,
+				14C4181E1E492FF9001DDF8C /* Model */,
 				14C417FC1E492CD2001DDF8C /* AppDelegate.swift */,
 				14C417FE1E492CD2001DDF8C /* ViewController.swift */,
 				14C418001E492CD2001DDF8C /* Main.storyboard */,
@@ -96,6 +133,23 @@
 			path = FrenchPollTests;
 			sourceTree = "<group>";
 		};
+		14C4181E1E492FF9001DDF8C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				14C4181C1E492FF5001DDF8C /* Candidate.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		ED33B4F9578821EF35750051 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CC2E3263F9A675A318AAB1F8 /* Pods_FrenchPoll.framework */,
+				F546849F5349981D96391B0A /* Pods_FrenchPollTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +157,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14C418161E492CD2001DDF8C /* Build configuration list for PBXNativeTarget "FrenchPoll" */;
 			buildPhases = (
+				710082C8F3A8CCB4F05464C1 /* [CP] Check Pods Manifest.lock */,
 				14C417F51E492CD2001DDF8C /* Sources */,
 				14C417F61E492CD2001DDF8C /* Frameworks */,
 				14C417F71E492CD2001DDF8C /* Resources */,
+				621DCB9B7024EC58AE6B2D52 /* [CP] Embed Pods Frameworks */,
+				F0E841CC9D50EB16D29F473C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -120,9 +177,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14C418191E492CD2001DDF8C /* Build configuration list for PBXNativeTarget "FrenchPollTests" */;
 			buildPhases = (
+				D42F776D0A9CD6CAA40AFCD9 /* [CP] Check Pods Manifest.lock */,
 				14C418091E492CD2001DDF8C /* Sources */,
 				14C4180A1E492CD2001DDF8C /* Frameworks */,
 				14C4180B1E492CD2001DDF8C /* Resources */,
+				F4C4EBF5B424C2E42A34186F /* [CP] Embed Pods Frameworks */,
+				425CCEDB9736AC560B079E89 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -194,13 +254,108 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		425CCEDB9736AC560B079E89 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FrenchPollTests/Pods-FrenchPollTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		621DCB9B7024EC58AE6B2D52 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FrenchPoll/Pods-FrenchPoll-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		710082C8F3A8CCB4F05464C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D42F776D0A9CD6CAA40AFCD9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F0E841CC9D50EB16D29F473C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FrenchPoll/Pods-FrenchPoll-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4C4EBF5B424C2E42A34186F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FrenchPollTests/Pods-FrenchPollTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		14C417F51E492CD2001DDF8C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14C4181D1E492FF5001DDF8C /* Candidate.swift in Sources */,
 				14C417FF1E492CD2001DDF8C /* ViewController.swift in Sources */,
 				14C417FD1E492CD2001DDF8C /* AppDelegate.swift in Sources */,
+				1422BD4B1E4A2A59002E77B5 /* CandidateCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +490,7 @@
 		};
 		14C418171E492CD2001DDF8C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5082AA4A3B58CB0D83ECB628 /* Pods-FrenchPoll.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FrenchPoll/Info.plist;
@@ -347,6 +503,7 @@
 		};
 		14C418181E492CD2001DDF8C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE21226EA775CB6EEAB24B6D /* Pods-FrenchPoll.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FrenchPoll/Info.plist;
@@ -359,6 +516,7 @@
 		};
 		14C4181A1E492CD2001DDF8C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B0418AE653FC8F9237CEA10 /* Pods-FrenchPollTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -373,6 +531,7 @@
 		};
 		14C4181B1E492CD2001DDF8C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBD0D7D9CD4FC3DF2F4282D1 /* Pods-FrenchPollTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -404,6 +563,7 @@
 				14C418181E492CD2001DDF8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		14C418191E492CD2001DDF8C /* Build configuration list for PBXNativeTarget "FrenchPollTests" */ = {
 			isa = XCConfigurationList;
@@ -412,6 +572,7 @@
 				14C4181B1E492CD2001DDF8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

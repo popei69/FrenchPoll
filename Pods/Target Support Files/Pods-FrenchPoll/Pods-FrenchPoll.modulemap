@@ -1,0 +1,6 @@
+framework module Pods_FrenchPoll {
+  umbrella header "Pods-FrenchPoll-umbrella.h"
+
+  export *
+  module * { export * }
+}
