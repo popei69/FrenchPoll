@@ -15,6 +15,9 @@ class CandidateCell: UITableViewCell {
     @IBOutlet weak var candidateNameLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
+    @IBOutlet weak var scoreImageView: UIImageView!
+    @IBOutlet weak var scorePositionLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
