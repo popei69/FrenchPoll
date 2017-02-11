@@ -52,4 +52,12 @@ struct Candidate {
         
         return ""
     }
+    
+    func getLatestUpdate() -> Date? {
+        if data.count > 0 {
+            return data[0].date
+        }
+        
+        return nil
+    }
 }

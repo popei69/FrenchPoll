@@ -14,6 +14,8 @@ class SecondRoundViewController: UIViewController {
     var firstCandidate : Candidate?
     var secondCandidate : Candidate?
     
+    var delegate : CandidateListController?
+    
     @IBOutlet weak var contentView: UIView!
     
     // first candidate UI
@@ -30,7 +32,6 @@ class SecondRoundViewController: UIViewController {
     
     @IBOutlet weak var secondScoreEvolutionLabel: UILabel!
     @IBOutlet weak var secondScoreImageView: UIImageView!
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,7 +80,6 @@ class SecondRoundViewController: UIViewController {
             secondCandidateImageView.layer.borderColor = UIColor.darkGray.cgColor
             secondCandidateImageView.layer.borderWidth = 1
             
-            
             // first score
             let firstScoreEvolution = firstCandidate.compareLatestValues()
             if firstScoreEvolution > 0 {
@@ -88,7 +88,7 @@ class SecondRoundViewController: UIViewController {
                 firstScoreImageView.isHidden = false
                 
                 firstScoreEvolutionLabel.text = "+" + String(firstScoreEvolution)
-                firstScoreEvolutionLabel.textColor = ViewController.greenColour
+                firstScoreEvolutionLabel.textColor = AppHelper.greenColour
                 firstScoreEvolutionLabel.isHidden = false
                 
             } else if firstScoreEvolution < 0 {
@@ -97,7 +97,7 @@ class SecondRoundViewController: UIViewController {
                 firstScoreImageView.isHidden = false
                 
                 firstScoreEvolutionLabel.text = String(firstScoreEvolution)
-                firstScoreEvolutionLabel.textColor = ViewController.redColour
+                firstScoreEvolutionLabel.textColor = AppHelper.redColour
                 firstScoreEvolutionLabel.isHidden = false
                 
             } else {
@@ -114,7 +114,7 @@ class SecondRoundViewController: UIViewController {
                 secondScoreImageView.isHidden = false
                 
                 secondScoreEvolutionLabel.text = "+" + String(secondScoreEvolution)
-                secondScoreEvolutionLabel.textColor = ViewController.greenColour
+                secondScoreEvolutionLabel.textColor = AppHelper.greenColour
                 secondScoreEvolutionLabel.isHidden = false
                 
             } else if firstScoreEvolution < 0 {
@@ -123,7 +123,7 @@ class SecondRoundViewController: UIViewController {
                 secondScoreImageView.isHidden = false
                 
                 secondScoreEvolutionLabel.text = String(secondScoreEvolution)
-                secondScoreEvolutionLabel.textColor = ViewController.redColour
+                secondScoreEvolutionLabel.textColor = AppHelper.redColour
                 secondScoreEvolutionLabel.isHidden = false
                 
             } else {
@@ -138,6 +138,12 @@ class SecondRoundViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func hideLayout(_ sender: Any) {
+        
+        if let delegate = delegate {
+            delegate.showFirstTurn(sender)
+        }
+    }
 
     /*
     // MARK: - Navigation

@@ -12,17 +12,8 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    // static api to consume
-    static let url = "https://9sl1b17sd8.execute-api.us-east-1.amazonaws.com/dev/polls"
-    
-    // green colour #3EDE59
-    static let greenColour = UIColor(red: 62/255, green: 222/255, blue: 89/255, alpha: 1.0)
-    
-    // red colour #FF6260
-    static let redColour = UIColor(red: 255/255, green: 98/255, blue: 96/255, alpha: 1.0)
-    
+class CandidateListController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+        
     var candidates : [Candidate] = []
     
     var dateFormatter = DateFormatter()
@@ -45,7 +36,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // second round 
     var secondRoundController : SecondRoundViewController?
-    let closeSecondRound = UISwipeGestureRecognizer(target: self, action: #selector(hideSecondRound))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +44,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         titleLabel.text = "Premier tour"
         
         parseDateformatter.dateFormat = "YYYY-MM-dd"
-        dateFormatter.dateStyle = .medium
+        dateFormatter.dateStyle = .long
         dateFormatter.timeStyle = .none
         
 //        self.view.backgroundColor = UIColor.red
@@ -77,7 +67,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.backgroundView.layer.addSublayer(gradientLayer)
         
         self.pollData()
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -108,16 +97,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if let controller = secondRoundController, secondRoundCandidates.count == 2 {
             controller.firstCandidate = secondRoundCandidates[0]
             controller.secondCandidate = secondRoundCandidates[1]
-            
-            closeSecondRound.direction = .down
-//            controller.updateLayouts()
+            controller.delegate = self
         }
         
     }
 
     func pollData() {
         
-        Alamofire.request(ViewController.url).responseJSON { (response) in
+        Alamofire.request(AppHelper.url).responseJSON { (response) in
             // print(response.request)  // original URL request
             // print(response.response) // HTTP URL response
             // print(response.data)     // server data
@@ -229,7 +216,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.scoreImageView.isHidden = false
             
             cell.scorePositionLabel.text = "+" + String(scoreEvolution)
-            cell.scorePositionLabel.textColor = ViewController.greenColour
+            cell.scorePositionLabel.textColor = AppHelper.greenColour
             cell.scorePositionLabel.isHidden = false
             
         } else if scoreEvolution < 0 {
@@ -238,7 +225,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.scoreImageView.isHidden = false
             
             cell.scorePositionLabel.text = String(scoreEvolution)
-            cell.scorePositionLabel.textColor = ViewController.redColour
+            cell.scorePositionLabel.textColor = AppHelper.redColour
             cell.scorePositionLabel.isHidden = false
             
         } else {
@@ -253,6 +240,35 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 40.0))
+            
+        let label = UILabel()
+        label.frame = view.frame
+        label.textAlignment = .center
+        label.backgroundColor = UIColor.white
+        label.layer.cornerRadius = 10.0
+        label.layer.masksToBounds = true
+        label.textColor = UIColor.lightGray
+        label.font = UIFont(name: "Avenir-BookOblique", size: 13.0)
+    
+        if candidates.count > 0,
+            let date = candidates[0].getLatestUpdate() {
+            label.text = "Last updated " + dateFormatter.string(from: date)
+        } else {
+            label.text = ""
+        }
+        
+        view.backgroundColor = UIColor.clear
+        view.addSubview(label)
+        
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40.0
+    }
+    
     // MARK - Animation
     
     @IBAction func showFirstTurn(_ sender: Any) {
@@ -263,6 +279,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return
         }
         
+        self.hideSecondRound()
         UIView.animate(withDuration: 0.3, animations: {
             self.titleLabel.alpha = 0.0
         }) { success in
@@ -270,7 +287,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.titleLabel.text = "Premier tour"
             self.pageControl.currentPage = 0
             self.isFirstRoundDisplay = true
-            self.hideSecondRound()
+//            self.hideSecondRound()
             
             UIView.animate(withDuration: 0.3, animations: {
                 self.titleLabel.alpha = 1.0
@@ -286,6 +303,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return
         }
         
+        self.showSecondRound()
         UIView.animate(withDuration: 0.3, animations: {
             self.titleLabel.alpha = 0.0
         }) { success in
@@ -293,7 +311,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.titleLabel.text = "Second tour"
             self.pageControl.currentPage = 1
             self.isFirstRoundDisplay = false
-            self.showSecondRound()
+//            self.showSecondRound()
             
             UIView.animate(withDuration: 0.3, animations: {
                 self.titleLabel.alpha = 1.0
@@ -317,9 +335,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 controller.view.frame = endFrame
             })
             
-            // add swipe gesture
-            controller.view.addGestureRecognizer(closeSecondRound)
-            
         }
     }
     
@@ -333,7 +348,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 controller.view.frame = endFrame
             }, completion: { success in
                 controller.view.removeFromSuperview()
-                controller.view.removeGestureRecognizer(self.closeSecondRound)
             })
             
         }
