@@ -137,6 +137,9 @@
                                 <state key="normal" image="heart-button"/>
                                 <state key="selected" image="heart-selected-button"/>
                                 <state key="highlighted" image="heart-selected-button"/>
+                                <connections>
+                                    <action selector="showShareButton:" destination="BYZ-38-t0r" eventType="touchDown" id="6zz-6V-1wF"/>
+                                </connections>
                             </button>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="AMF-1V-uiO">
                                 <rect key="frame" x="166" y="42" width="43" height="37"/>
@@ -184,7 +187,7 @@
                         <outlet property="backgroundView" destination="Q3H-Qo-qEz" id="EnB-Nv-f5I"/>
                         <outlet property="infoButton" destination="JAM-U5-YCT" id="1QO-b5-e2w"/>
                         <outlet property="pageControl" destination="AMF-1V-uiO" id="ynY-eb-tX2"/>
-                        <outlet property="shareButton" destination="tTH-DW-8vf" id="dzu-i6-x0d"/>
+                        <outlet property="shareButton" destination="tTH-DW-8vf" id="cff-Sh-Pan"/>
                         <outlet property="tableView" destination="vLw-Rp-ppV" id="mM7-1U-1H9"/>
                         <outlet property="titleLabel" destination="WGc-Vo-mLi" id="cuk-3z-Aju"/>
                     </connections>

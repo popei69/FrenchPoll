@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CandidateListController.swift
 //  FrenchPoll
 //
 //  Created by Benoit PASQUIER on 06/02/2017.
@@ -47,11 +47,7 @@ class CandidateListController: UIViewController, UITableViewDelegate, UITableVie
         dateFormatter.dateStyle = .long
         dateFormatter.timeStyle = .none
         
-//        self.view.backgroundColor = UIColor.red
         self.tableView.backgroundColor = UIColor.clear
-        
-//        self.tableView.layer.cornerRadius = 15.0
-//        self.tableView.layer.masksToBounds = true
         
         let maskPath = UIBezierPath(roundedRect: self.tableView.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 10, height: 10))
         let maskLayer = CAShapeLayer();
@@ -269,7 +265,7 @@ class CandidateListController: UIViewController, UITableViewDelegate, UITableVie
         return 40.0
     }
     
-    // MARK - Animation
+    // MARK: Animation
     
     @IBAction func showFirstTurn(_ sender: Any) {
         // will show first turn
@@ -351,6 +347,32 @@ class CandidateListController: UIViewController, UITableViewDelegate, UITableVie
             })
             
         }
+        
+    }
+    
+    // MARK: Share button
+    
+    @IBAction func showShareButton(_ sender: Any) {
+        
+        let alertController = UIAlertController(title: "Share your ♥️", message: "You like this app? Help us by sharing it!", preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(title: "Rate it on Apple Store", style: .default, handler: { alertAction in
+            
+            guard let url = URL(string: AppHelper.storeUrl) else { return }
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { alertAction in
+            alertController.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func showInfoButton(_ sender: Any) {
+        
+        // get the data from server side
+        
         
     }
 
