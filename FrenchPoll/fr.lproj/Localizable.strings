@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  FrenchPoll
+
+  Created by Benoit PASQUIER on 12/02/2017.
+  Copyright © 2017 Benoit PASQUIER. All rights reserved.
+*/
+
+"First round" = "Premier tour";
+"Second round" = "Second tour";
+"Last update" = "Dernière mise à jour: ";
+"Share your love" = "Partager votre ♥️";
+"Share it" = "Vous aimez cette app? Aidez nous en le faisant savoir!";
+"Rate it on App Store" = "Noter sur l'App Store";
+"Cancel" = "Annuler";

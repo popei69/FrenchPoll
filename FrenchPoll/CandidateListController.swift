@@ -41,7 +41,7 @@ class CandidateListController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        titleLabel.text = "Premier tour"
+        titleLabel.text = NSLocalizedString("First round", comment: "First round")
         
         parseDateformatter.dateFormat = "YYYY-MM-dd"
         dateFormatter.dateStyle = .long
@@ -250,7 +250,7 @@ class CandidateListController: UIViewController, UITableViewDelegate, UITableVie
     
         if candidates.count > 0,
             let date = candidates[0].getLatestUpdate() {
-            label.text = "Last updated " + dateFormatter.string(from: date)
+            label.text = NSLocalizedString("Last update", comment: "Last update") + dateFormatter.string(from: date)
         } else {
             label.text = ""
         }
@@ -280,7 +280,7 @@ class CandidateListController: UIViewController, UITableViewDelegate, UITableVie
             self.titleLabel.alpha = 0.0
         }) { success in
             
-            self.titleLabel.text = "Premier tour"
+            self.titleLabel.text = NSLocalizedString("First round", comment: "First round")
             self.pageControl.currentPage = 0
             self.isFirstRoundDisplay = true
 //            self.hideSecondRound()
@@ -304,7 +304,7 @@ class CandidateListController: UIViewController, UITableViewDelegate, UITableVie
             self.titleLabel.alpha = 0.0
         }) { success in
             
-            self.titleLabel.text = "Second tour"
+            self.titleLabel.text = NSLocalizedString("Second round", comment: "Second round")
             self.pageControl.currentPage = 1
             self.isFirstRoundDisplay = false
 //            self.showSecondRound()
@@ -354,15 +354,15 @@ class CandidateListController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBAction func showShareButton(_ sender: Any) {
         
-        let alertController = UIAlertController(title: "Share your ♥️", message: "You like this app? Help us by sharing it!", preferredStyle: .alert)
+        let alertController = UIAlertController(title: NSLocalizedString("Share your love", comment: "Share your love"), message: NSLocalizedString("Share it", comment: "Share it"), preferredStyle: .alert)
         
-        alertController.addAction(UIAlertAction(title: "Rate it on Apple Store", style: .default, handler: { alertAction in
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("Rate it on App Store", comment: "Rate it on App Store"), style: .default, handler: { alertAction in
             
             guard let url = URL(string: AppHelper.storeUrl) else { return }
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }))
         
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { alertAction in
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel"), style: .cancel, handler: { alertAction in
             alertController.dismiss(animated: true, completion: nil)
         }))
         

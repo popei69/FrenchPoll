@@ -22,19 +22,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="tUO-X4-f4D">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="custom-emoji" translatesAutoresizingMaskIntoConstraints="NO" id="CIX-3H-DYI">
-                                <rect key="frame" x="117" y="230" width="140" height="142"/>
+                                <rect key="frame" x="117" y="210" width="140" height="142"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon Kandidat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AIn-Dj-Mum">
-                                <rect key="frame" x="111.5" y="402" width="152.5" height="33"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="French Poll 2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AIn-Dj-Mum">
+                                <rect key="frame" x="98.5" y="382" width="179" height="33"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suivez le pronostique quotidien de votre candidat" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iI0-TB-6KZ">
-                                <rect key="frame" x="97.5" y="460" width="180" height="38.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Follow candidate's daily score for French elections." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iI0-TB-6KZ">
+                                <rect key="frame" x="97.5" y="440" width="180" height="38.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="BqJ-Ww-GxY"/>
                                 </constraints>
@@ -48,15 +48,16 @@
                             <constraint firstItem="tUO-X4-f4D" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="56u-6u-z97"/>
                             <constraint firstItem="CIX-3H-DYI" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="210" id="7KX-xw-ipH"/>
                             <constraint firstItem="AIn-Dj-Mum" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="A0Z-KY-0hh"/>
-                            <constraint firstItem="tUO-X4-f4D" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="A5b-KU-YeH"/>
                             <constraint firstItem="iI0-TB-6KZ" firstAttribute="top" secondItem="AIn-Dj-Mum" secondAttribute="bottom" constant="25" id="FRv-Wz-Sgj"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="tUO-X4-f4D" secondAttribute="bottom" id="KYF-fR-iZB"/>
+                            <constraint firstItem="tUO-X4-f4D" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="PWh-UI-c33"/>
                             <constraint firstItem="iI0-TB-6KZ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="U8D-GW-Y5O"/>
                             <constraint firstAttribute="trailing" secondItem="tUO-X4-f4D" secondAttribute="trailing" id="ZfI-eG-NZV"/>
                             <constraint firstItem="AIn-Dj-Mum" firstAttribute="top" secondItem="CIX-3H-DYI" secondAttribute="bottom" constant="30" id="dA7-Tj-zHW"/>
                             <constraint firstItem="CIX-3H-DYI" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="tvO-av-NCN"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
