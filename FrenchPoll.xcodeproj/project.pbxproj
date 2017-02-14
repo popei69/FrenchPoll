@@ -220,6 +220,7 @@
 				TargetAttributes = {
 					14C417F81E492CD2001DDF8C = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = XG3URJ46HG;
 						ProvisioningStyle = Automatic;
 					};
 					14C4180C1E492CD2001DDF8C = {
@@ -524,9 +525,11 @@
 			baseConfigurationReference = 5082AA4A3B58CB0D83ECB628 /* Pods-FrenchPoll.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = XG3URJ46HG;
 				INFOPLIST_FILE = FrenchPoll/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = fr.benoitpasquier.FrenchPoll;
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.benoitpasquier.french-poll";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -537,10 +540,11 @@
 			baseConfigurationReference = EE21226EA775CB6EEAB24B6D /* Pods-FrenchPoll.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = RE7Y5NQ3LF;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = XG3URJ46HG;
 				INFOPLIST_FILE = FrenchPoll/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = fr.benoitpasquier.FrenchPoll;
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.benoitpasquier.french-poll";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
