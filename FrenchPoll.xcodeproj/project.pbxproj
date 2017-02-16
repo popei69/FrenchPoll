@@ -44,7 +44,7 @@
 		145EB4831E4DF52F002A7891 /* SecondRoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondRoundViewController.swift; sourceTree = "<group>"; };
 		149CC8621E50789400114F76 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		149CC8641E50789900114F76 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		14C417F91E492CD2001DDF8C /* FrenchPoll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrenchPoll.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		14C417F91E492CD2001DDF8C /* Election 2017.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Election 2017.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C417FC1E492CD2001DDF8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14C417FE1E492CD2001DDF8C /* CandidateListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateListController.swift; sourceTree = "<group>"; };
 		14C418011E492CD2001DDF8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 		14C417FA1E492CD2001DDF8C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				14C417F91E492CD2001DDF8C /* FrenchPoll.app */,
+				14C417F91E492CD2001DDF8C /* Election 2017.app */,
 				14C4180D1E492CD2001DDF8C /* FrenchPollTests.xctest */,
 			);
 			name = Products;
@@ -186,7 +186,7 @@
 			);
 			name = FrenchPoll;
 			productName = FrenchPoll;
-			productReference = 14C417F91E492CD2001DDF8C /* FrenchPoll.app */;
+			productReference = 14C417F91E492CD2001DDF8C /* Election 2017.app */;
 			productType = "com.apple.product-type.application";
 		};
 		14C4180C1E492CD2001DDF8C /* FrenchPollTests */ = {
@@ -532,9 +532,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = XG3URJ46HG;
 				INFOPLIST_FILE = FrenchPoll/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.benoitpasquier.french-poll";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Election 2017";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -547,9 +548,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = XG3URJ46HG;
 				INFOPLIST_FILE = FrenchPoll/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.benoitpasquier.french-poll";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Election 2017";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

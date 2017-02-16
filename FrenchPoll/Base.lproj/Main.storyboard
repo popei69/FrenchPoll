@@ -13,7 +13,7 @@
         <!--Candidate List Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CandidateListController" customModule="FrenchPoll" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CandidateListController" customModule="Election_2017" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ve4-ws-SXR"/>
                         <viewControllerLayoutGuide type="bottom" id="u6M-uY-z9s"/>
@@ -26,19 +26,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <gestureRecognizers/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q3H-Qo-qEz">
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q3H-Qo-qEz">
                                 <rect key="frame" x="0.0" y="70" width="414" height="666"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vLw-Rp-ppV">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vLw-Rp-ppV">
                                 <rect key="frame" x="0.0" y="70" width="414" height="666"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CandidateCell" id="Bzx-Le-wgi" customClass="CandidateCell" customModule="FrenchPoll" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CandidateCell" id="Bzx-Le-wgi" customClass="CandidateCell" customModule="Election_2017" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bzx-Le-wgi" id="gEz-iR-6EC">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="79"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fA5-DR-upe">
@@ -130,6 +130,9 @@
                                     <constraint firstAttribute="height" constant="30" id="yCW-37-IZH"/>
                                 </constraints>
                                 <state key="normal" image="info-button"/>
+                                <connections>
+                                    <action selector="showInfoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RY7-9N-CrF"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTH-DW-8vf">
                                 <rect key="frame" x="368" y="25" width="30" height="30"/>
@@ -145,10 +148,10 @@
                                 </connections>
                             </button>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="AMF-1V-uiO">
-                                <rect key="frame" x="195.66666666666666" y="42" width="23" height="37"/>
+                                <rect key="frame" x="196" y="42" width="23" height="37"/>
                             </pageControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First round" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGc-Vo-mLi">
-                                <rect key="frame" x="86" y="24.999999999999996" width="242" height="23.666666666666661"/>
+                                <rect key="frame" x="86" y="25" width="242" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="sj6-vJ-akC"/>
                                 </constraints>
@@ -158,27 +161,27 @@
                             </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Q3H-Qo-qEz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3E7-IK-sg2"/>
-                            <constraint firstAttribute="trailing" secondItem="Q3H-Qo-qEz" secondAttribute="trailing" id="6fW-yt-LFY"/>
+                            <constraint firstItem="Q3H-Qo-qEz" firstAttribute="leading" secondItem="vLw-Rp-ppV" secondAttribute="leading" id="1R9-E8-OUq"/>
                             <constraint firstItem="JAM-U5-YCT" firstAttribute="top" secondItem="Ve4-ws-SXR" secondAttribute="bottom" constant="5" id="7yc-Bg-QRF"/>
                             <constraint firstAttribute="trailing" secondItem="pF8-u1-RnS" secondAttribute="trailing" id="9u1-gD-0w4"/>
+                            <constraint firstItem="Q3H-Qo-qEz" firstAttribute="trailing" secondItem="vLw-Rp-ppV" secondAttribute="trailing" id="AHW-4h-exi"/>
                             <constraint firstItem="WGc-Vo-mLi" firstAttribute="leading" secondItem="JAM-U5-YCT" secondAttribute="trailing" constant="40" id="Blg-Xt-hCL"/>
                             <constraint firstItem="pF8-u1-RnS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="D8p-C8-P5O"/>
                             <constraint firstItem="WGc-Vo-mLi" firstAttribute="top" secondItem="Ve4-ws-SXR" secondAttribute="bottom" constant="5" id="ESy-ZW-5us"/>
+                            <constraint firstItem="Q3H-Qo-qEz" firstAttribute="bottom" secondItem="u6M-uY-z9s" secondAttribute="top" id="EcC-9I-CY9"/>
                             <constraint firstItem="AMF-1V-uiO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FJA-dI-trh"/>
                             <constraint firstItem="tTH-DW-8vf" firstAttribute="top" secondItem="Ve4-ws-SXR" secondAttribute="bottom" constant="5" id="HVg-ea-OqY"/>
                             <constraint firstItem="vLw-Rp-ppV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="70" id="Qfu-L0-mYf"/>
-                            <constraint firstItem="u6M-uY-z9s" firstAttribute="top" secondItem="Q3H-Qo-qEz" secondAttribute="bottom" id="Sow-Ur-ZGs"/>
                             <constraint firstItem="u6M-uY-z9s" firstAttribute="top" secondItem="vLw-Rp-ppV" secondAttribute="bottom" id="UUa-rr-ERF"/>
                             <constraint firstItem="JAM-U5-YCT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="Vfs-yA-VKg"/>
                             <constraint firstItem="tTH-DW-8vf" firstAttribute="leading" secondItem="WGc-Vo-mLi" secondAttribute="trailing" constant="40" id="e1g-xz-feC"/>
-                            <constraint firstItem="Q3H-Qo-qEz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="70" id="fUi-tX-jmW"/>
                             <constraint firstItem="AMF-1V-uiO" firstAttribute="top" secondItem="Ve4-ws-SXR" secondAttribute="bottom" constant="22" id="fXy-sn-gDK"/>
                             <constraint firstItem="pF8-u1-RnS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="h7O-WX-IAH"/>
                             <constraint firstAttribute="trailing" secondItem="tTH-DW-8vf" secondAttribute="trailing" constant="16" id="iVO-8V-Xe9"/>
                             <constraint firstItem="u6M-uY-z9s" firstAttribute="top" secondItem="pF8-u1-RnS" secondAttribute="bottom" id="pr6-m1-YkM"/>
                             <constraint firstAttribute="trailing" secondItem="vLw-Rp-ppV" secondAttribute="trailing" id="weL-GS-zrn"/>
                             <constraint firstItem="vLw-Rp-ppV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xvL-Eq-bee"/>
+                            <constraint firstItem="Q3H-Qo-qEz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="70" id="yEO-z5-8iW"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="w0U-yb-ZLk" appends="YES" id="Pha-RC-hLq"/>
@@ -213,7 +216,7 @@
         <!--Second Round View Controller-->
         <scene sceneID="LVk-CM-JXe">
             <objects>
-                <viewController storyboardIdentifier="SecondRoundViewController" id="NxP-B1-Nxs" customClass="SecondRoundViewController" customModule="FrenchPoll" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondRoundViewController" id="NxP-B1-Nxs" customClass="SecondRoundViewController" customModule="Election_2017" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Pkr-zu-jsi"/>
                         <viewControllerLayoutGuide type="bottom" id="qHT-7Y-s86"/>

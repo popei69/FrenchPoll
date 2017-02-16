@@ -15,6 +15,11 @@ import SwiftyJSON
 class CandidateListController: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
     var candidates : [Candidate] = []
+    var methodologyString = ""
+    
+    var pollingTimer : Timer?
+    let reachabilityManager = Alamofire.NetworkReachabilityManager(host: "www.apple.com")
+    
     
     var dateFormatter = DateFormatter()
     var parseDateformatter = DateFormatter()
@@ -49,6 +54,21 @@ class CandidateListController: UIViewController, UITableViewDelegate, UITableVie
         
         self.tableView.backgroundColor = UIColor.clear
         
+        self.pollData()
+        self.startNetworkReachabilityObserver()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if pollingTimer == nil {
+            pollingTimer = Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(CandidateListController.pollData), userInfo: nil, repeats: true)
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         let maskPath = UIBezierPath(roundedRect: self.tableView.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 10, height: 10))
         let maskLayer = CAShapeLayer();
         maskLayer.path = maskPath.cgPath
@@ -61,8 +81,15 @@ class CandidateListController: UIViewController, UITableViewDelegate, UITableVie
         gradientLayer.colors = [UIColor.white.cgColor, greyColor.cgColor]
         gradientLayer.locations = [0.0, 1.0]
         self.backgroundView.layer.addSublayer(gradientLayer)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        self.pollData()
+        if let timer = pollingTimer {
+            timer.invalidate()
+            pollingTimer = nil
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,6 +99,40 @@ class CandidateListController: UIViewController, UITableViewDelegate, UITableVie
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    func startNetworkReachabilityObserver() {
+        reachabilityManager?.listener = { status in
+            
+            switch status {
+                
+            case .notReachable:
+                print("The network is not reachable")
+                self.displayNetworkDialog()
+                break
+                
+            case .reachable(.ethernetOrWiFi):
+                print("The network is reachable over the WiFi connection")
+                self.pollData()
+                break
+                
+            default:
+                break
+            }
+        }
+        
+        // start listening
+        reachabilityManager?.startListening()
+    }
+    
+    func displayNetworkDialog() {
+        let alertController = UIAlertController(title: "Network issue", message: "Verify your connection and try again.", preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: "Close"), style: .cancel, handler: { alertAction in
+            alertController.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alertController, animated: true, completion: nil)
     }
     
     func reloadData() {
@@ -110,8 +171,16 @@ class CandidateListController: UIViewController, UITableViewDelegate, UITableVie
                 let swiftyJson = JSON(tmpJson)
                 // print("JSON: \(swiftyJson)")
                 
+                if let methodology = swiftyJson["data"]["methodologie"].string {
+                    self.methodologyString = methodology
+                }
+                
+                self.candidates.removeAll()
+                self.secondRoundCandidates.removeAll()
+                
                 // serialise data for first round
                 for (_, tmpCandidateJson) : (String, JSON) in swiftyJson["data"]["premier_tour"] {
+                    
                     
                     if let name = tmpCandidateJson["name"].string,
                         let color = tmpCandidateJson["color"].string {
@@ -372,9 +441,20 @@ class CandidateListController: UIViewController, UITableViewDelegate, UITableVie
     @IBAction func showInfoButton(_ sender: Any) {
         
         // get the data from server side
-        
-        
+        if !methodologyString.isEmpty {
+            
+            let message = NSLocalizedString("App based data", comment: "App based data") + "\n\n \"" + methodologyString + "\""
+            
+            let alertController = UIAlertController(title: NSLocalizedString("Info", comment: "Info"), message: message, preferredStyle: .actionSheet)
+            
+            alertController.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: "Close"), style: .cancel, handler: { alertAction in
+                alertController.dismiss(animated: true, completion: nil)
+            }))
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
+    
 
 }
 
