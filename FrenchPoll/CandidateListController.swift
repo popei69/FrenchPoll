@@ -365,11 +365,11 @@ class CandidateListController: UIViewController, UITableViewDelegate, UITableVie
         // will show second turn
         print("show second turn")
         
-        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "SecondRoundViewController") as? SecondRoundViewController {
-//            secondRoundCandidates.count == 2 {
+        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "SecondRoundViewController") as? SecondRoundViewController, 
+            secondRoundCandidates.count == 2 {
             
-//            controller.firstCandidate = secondRoundCandidates[0]
-//            controller.secondCandidate = secondRoundCandidates[1]
+            controller.firstCandidate = secondRoundCandidates[0]
+            controller.secondCandidate = secondRoundCandidates[1]
             controller.delegate = self
             controller.view.backgroundColor = UIColor.clear
             controller.modalPresentationStyle = .overCurrentContext

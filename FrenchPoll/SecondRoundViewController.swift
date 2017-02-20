@@ -61,6 +61,12 @@ class SecondRoundViewController: UIViewController {
         self.contentView.layer.shadowRadius = 10
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.updateLayouts()
+    }
+    
     func updateLayouts() {
         
         if let firstCandidate = firstCandidate,
