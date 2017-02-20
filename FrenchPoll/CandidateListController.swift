@@ -35,7 +35,6 @@ class CandidateListController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var shareButton: UIButton!
     
     // UI Animation
-    var isAnimating = false
     var isFirstRoundDisplay = true
     var secondRoundCandidates : [Candidate] = []
     
@@ -144,19 +143,7 @@ class CandidateListController: UIViewController, UITableViewDelegate, UITableVie
             $0.data.first!.value > $1.data.first!.value
         }
         
-        print(candidates)
-        
         tableView.reloadData()
-        
-        // build second round
-        secondRoundController = self.storyboard?.instantiateViewController(withIdentifier: "SecondRoundViewController") as? SecondRoundViewController
-        
-        if let controller = secondRoundController, secondRoundCandidates.count == 2 {
-            controller.firstCandidate = secondRoundCandidates[0]
-            controller.secondCandidate = secondRoundCandidates[1]
-            controller.delegate = self
-        }
-        
     }
 
     func pollData() {
@@ -171,8 +158,8 @@ class CandidateListController: UIViewController, UITableViewDelegate, UITableVie
                 let swiftyJson = JSON(tmpJson)
                 // print("JSON: \(swiftyJson)")
                 
-                if let methodology = swiftyJson["data"]["methodologie"].string {
-                    self.methodologyString = methodology
+                if let methodology = swiftyJson["data"]["methodologie"].string, let finalString = self.convertedEncodedToString(sourceString: methodology) {
+                    self.methodologyString = finalString
                 }
                 
                 self.candidates.removeAll()
@@ -250,6 +237,16 @@ class CandidateListController: UIViewController, UITableViewDelegate, UITableVie
         let convertedString = name.mutableCopy() as! NSMutableString
         CFStringTransform(convertedString, nil, "Any-Hex/Java" as NSString, true)
         return convertedString as String
+    }
+    
+    private func convertedEncodedToString(sourceString: String) -> String? {
+        if let htmldata = sourceString.data(using: String.Encoding.utf8),
+            let attributedString = try? NSAttributedString(data: htmldata, options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType], documentAttributes: nil) {
+            let finalString = attributedString.string
+            return finalString
+        }
+        
+        return nil
     }
     
     // MARK: UITableViewDelegate + UITableViewDataSource
@@ -340,11 +337,16 @@ class CandidateListController: UIViewController, UITableViewDelegate, UITableVie
         // will show first turn
         print("show first turn")
         
-        if isFirstRoundDisplay || isAnimating { // stop here
+        if let controller = self.secondRoundController {
+            
+            controller.dismiss(animated: true, completion: nil)
+            secondRoundController = nil
+        }
+        
+        if isFirstRoundDisplay { // stop here
             return
         }
         
-        self.hideSecondRound()
         UIView.animate(withDuration: 0.3, animations: {
             self.titleLabel.alpha = 0.0
         }) { success in
@@ -352,7 +354,6 @@ class CandidateListController: UIViewController, UITableViewDelegate, UITableVie
             self.titleLabel.text = NSLocalizedString("First round", comment: "First round")
             self.pageControl.currentPage = 0
             self.isFirstRoundDisplay = true
-//            self.hideSecondRound()
             
             UIView.animate(withDuration: 0.3, animations: {
                 self.titleLabel.alpha = 1.0
@@ -364,11 +365,22 @@ class CandidateListController: UIViewController, UITableViewDelegate, UITableVie
         // will show second turn
         print("show second turn")
         
-        if !isFirstRoundDisplay || isAnimating { // stop here
+        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "SecondRoundViewController") as? SecondRoundViewController {
+//            secondRoundCandidates.count == 2 {
+            
+//            controller.firstCandidate = secondRoundCandidates[0]
+//            controller.secondCandidate = secondRoundCandidates[1]
+            controller.delegate = self
+            controller.view.backgroundColor = UIColor.clear
+            controller.modalPresentationStyle = .overCurrentContext
+            self.secondRoundController = controller
+            self.present(controller, animated: true, completion: nil)
+        }
+        
+        if !isFirstRoundDisplay { // stop here
             return
         }
         
-        self.showSecondRound()
         UIView.animate(withDuration: 0.3, animations: {
             self.titleLabel.alpha = 0.0
         }) { success in
@@ -376,47 +388,11 @@ class CandidateListController: UIViewController, UITableViewDelegate, UITableVie
             self.titleLabel.text = NSLocalizedString("Second round", comment: "Second round")
             self.pageControl.currentPage = 1
             self.isFirstRoundDisplay = false
-//            self.showSecondRound()
             
             UIView.animate(withDuration: 0.3, animations: {
                 self.titleLabel.alpha = 1.0
             })
         }
-    }
-    
-    func showSecondRound() {
-        
-        if let controller = secondRoundController {
-            
-            let startFrame = CGRect(x: 0, y: self.view.frame.maxY, width: self.view.frame.size.width, height: self.view.frame.size.height)
-            
-            let endFrame = self.view.frame
-            
-            controller.view.frame = startFrame
-            controller.updateLayouts()
-            self.view.addSubview(controller.view)
-            
-            UIView.animate(withDuration: 0.3, animations: {
-                controller.view.frame = endFrame
-            })
-            
-        }
-    }
-    
-    func hideSecondRound() {
-        
-        if let controller = secondRoundController {
-            
-            let endFrame = CGRect(x: 0, y: controller.view.frame.maxY, width: controller.view.frame.size.width, height: controller.view.frame.size.height)
-            
-            UIView.animate(withDuration: 0.3, animations: { 
-                controller.view.frame = endFrame
-            }, completion: { success in
-                controller.view.removeFromSuperview()
-            })
-            
-        }
-        
     }
     
     // MARK: Share button

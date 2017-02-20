@@ -38,7 +38,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bzx-Le-wgi" id="gEz-iR-6EC">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fA5-DR-upe">
@@ -348,7 +348,7 @@
                             <constraint firstAttribute="trailing" secondItem="LgW-GQ-bPm" secondAttribute="trailing" id="Uev-Bi-2ch"/>
                         </constraints>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="T5i-R6-PU2" appends="YES" id="AJ6-8I-hzQ"/>
+                            <outletCollection property="gestureRecognizers" destination="jNP-Fs-TxV" appends="YES" id="YwW-G3-ceF"/>
                         </connections>
                     </view>
                     <connections>
@@ -364,11 +364,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kgy-5B-Pb6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="down" id="T5i-R6-PU2">
+                <tapGestureRecognizer id="jNP-Fs-TxV">
                     <connections>
-                        <action selector="hideLayout:" destination="NxP-B1-Nxs" id="tNl-8y-4rB"/>
+                        <action selector="hideController:" destination="NxP-B1-Nxs" id="sG9-5e-LT5"/>
                     </connections>
-                </swipeGestureRecognizer>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1860" y="104.7976011994003"/>
         </scene>

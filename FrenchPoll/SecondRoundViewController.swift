@@ -138,13 +138,11 @@ class SecondRoundViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func hideLayout(_ sender: Any) {
-        
+    @IBAction func hideController(_ sender: Any) {
         if let delegate = delegate {
             delegate.showFirstTurn(sender)
         }
     }
-
     /*
     // MARK: - Navigation
 

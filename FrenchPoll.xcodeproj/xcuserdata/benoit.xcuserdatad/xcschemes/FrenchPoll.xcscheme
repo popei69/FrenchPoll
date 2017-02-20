@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "14C417F81E492CD2001DDF8C"
-               BuildableName = "FrenchPoll.app"
+               BuildableName = "Election 2017.app"
                BlueprintName = "FrenchPoll"
                ReferencedContainer = "container:FrenchPoll.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "14C417F81E492CD2001DDF8C"
-            BuildableName = "FrenchPoll.app"
+            BuildableName = "Election 2017.app"
             BlueprintName = "FrenchPoll"
             ReferencedContainer = "container:FrenchPoll.xcodeproj">
          </BuildableReference>
@@ -67,7 +67,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "14C417F81E492CD2001DDF8C"
-            BuildableName = "FrenchPoll.app"
+            BuildableName = "Election 2017.app"
             BlueprintName = "FrenchPoll"
             ReferencedContainer = "container:FrenchPoll.xcodeproj">
          </BuildableReference>
@@ -86,7 +86,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "14C417F81E492CD2001DDF8C"
-            BuildableName = "FrenchPoll.app"
+            BuildableName = "Election 2017.app"
             BlueprintName = "FrenchPoll"
             ReferencedContainer = "container:FrenchPoll.xcodeproj">
          </BuildableReference>
