@@ -123,7 +123,7 @@ class SecondRoundViewController: UIViewController {
                 secondScoreEvolutionLabel.textColor = AppHelper.greenColour
                 secondScoreEvolutionLabel.isHidden = false
                 
-            } else if firstScoreEvolution < 0 {
+            } else if secondScoreEvolution < 0 {
                 
                 secondScoreImageView.image = UIImage(named: "bottom-arrow")
                 secondScoreImageView.isHidden = false

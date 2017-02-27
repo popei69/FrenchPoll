@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 struct AppHelper {
     
@@ -19,5 +20,16 @@ struct AppHelper {
     
     // red colour #FF6260
     static let redColour = UIColor(red: 255/255, green: 98/255, blue: 96/255, alpha: 1.0)
+    
+    static func savePollData(jsonString: String?) {
+        
+        let standard = UserDefaults.standard
+        standard.set(jsonString, forKey: "data")
+        standard.synchronize()
+    }
 
+    
+    static func fetchSavedData() -> String? {
+        return UserDefaults.standard.object(forKey: "data") as? String
+    }
 }

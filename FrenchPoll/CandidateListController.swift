@@ -53,6 +53,10 @@ class CandidateListController: UIViewController, UITableViewDelegate, UITableVie
         
         self.tableView.backgroundColor = UIColor.clear
         
+        if let lastRefreshData = AppHelper.fetchSavedData() {
+            populateDataFromResult(jsonString: lastRefreshData)
+        }
+        
         self.pollData()
         self.startNetworkReachabilityObserver()
     }
@@ -148,89 +152,95 @@ class CandidateListController: UIViewController, UITableViewDelegate, UITableVie
 
     func pollData() {
         
-        Alamofire.request(AppHelper.url).responseJSON { (response) in
+        Alamofire.request(AppHelper.url).responseString { (response) in
             // print(response.request)  // original URL request
             // print(response.response) // HTTP URL response
             // print(response.data)     // server data
             // print(response.result)   // result of response serialization
             
             if let tmpJson = response.result.value {
-                let swiftyJson = JSON(tmpJson)
                 // print("JSON: \(swiftyJson)")
                 
-                if let methodology = swiftyJson["data"]["methodologie"].string, let finalString = self.convertedEncodedToString(sourceString: methodology) {
-                    self.methodologyString = finalString
-                }
-                
-                self.candidates.removeAll()
-                self.secondRoundCandidates.removeAll()
-                
-                // serialise data for first round
-                for (_, tmpCandidateJson) : (String, JSON) in swiftyJson["data"]["premier_tour"] {
-                    
-                    
-                    if let name = tmpCandidateJson["name"].string,
-                        let color = tmpCandidateJson["color"].string {
-                        
-                        var tmpCandidate = Candidate(name: self.getConvertedName(name: name), color: color)
-                        
-                        // data is an array of array
-                        // get date + value
-                        if let tmpData = tmpCandidateJson["data"].arrayObject as? [[String]]  {
-                            
-                            for currentData in tmpData {
-                                
-                                if let currentDate = self.parseDateformatter.date(from: currentData[0]),
-                                    let currentValue = Int(currentData[1]) {
-                                    
-                                    let newScore = Score(date: currentDate, value: currentValue)
-                                    tmpCandidate.data.append(newScore)
-                                }
-                            }
-                            
-                            // sort data by date
-                            tmpCandidate.data.sort { $0.date > $1.date }
-                        }
-                        
-                        self.candidates.append(tmpCandidate)
-                    }
-                }
-                
-                // serialise data for second round
-                for (_, tmpCandidateJson) : (String, JSON) in swiftyJson["data"]["second_tour"] {
-                    
-                    if let name = tmpCandidateJson["name"].string,
-                        let color = tmpCandidateJson["color"].string {
-                        
-                        var tmpCandidate = Candidate(name: self.getConvertedName(name: name), color: color)
-                        
-                        // data is an array of array
-                        // get date + value
-                        if let tmpData = tmpCandidateJson["data"].arrayObject as? [[String]]  {
-                            
-                            for currentData in tmpData {
-                                
-                                if let currentDate = self.parseDateformatter.date(from: currentData[0]),
-                                    let currentValue = Int(currentData[1]) {
-                                    
-                                    let newScore = Score(date: currentDate, value: currentValue)
-                                    tmpCandidate.data.append(newScore)
-                                }
-                            }
-                            
-                            // sort data by date
-                            tmpCandidate.data.sort { $0.date > $1.date }
-                        }
-                        
-                        self.secondRoundCandidates.append(tmpCandidate)
-                    }
-                }
-                
+                AppHelper.savePollData(jsonString: tmpJson)
+                self.populateDataFromResult(jsonString: tmpJson)
             }
-            
-            
-            self.reloadData()
         }
+    }
+    
+    private func populateDataFromResult(jsonString: String) {
+    
+        let swiftyJson = JSON.init(parseJSON: jsonString)
+        // print("JSON: \(swiftyJson)")
+        
+        if let methodology = swiftyJson["data"]["methodologie"].string, let finalString = self.convertedEncodedToString(sourceString: methodology) {
+            self.methodologyString = finalString
+        }
+        
+        self.candidates.removeAll()
+        self.secondRoundCandidates.removeAll()
+        
+        // serialise data for first round
+        for (_, tmpCandidateJson) : (String, JSON) in swiftyJson["data"]["premier_tour"] {
+            
+            
+            if let name = tmpCandidateJson["name"].string,
+                let color = tmpCandidateJson["color"].string {
+                
+                var tmpCandidate = Candidate(name: self.getConvertedName(name: name), color: color)
+                
+                // data is an array of array
+                // get date + value
+                if let tmpData = tmpCandidateJson["data"].arrayObject as? [[String]]  {
+                    
+                    for currentData in tmpData {
+                        
+                        if let currentDate = self.parseDateformatter.date(from: currentData[0]),
+                            let currentValue = Int(currentData[1]) {
+                            
+                            let newScore = Score(date: currentDate, value: currentValue)
+                            tmpCandidate.data.append(newScore)
+                        }
+                    }
+                    
+                    // sort data by date
+                    tmpCandidate.data.sort { $0.date > $1.date }
+                }
+                
+                self.candidates.append(tmpCandidate)
+            }
+        }
+        
+        // serialise data for second round
+        for (_, tmpCandidateJson) : (String, JSON) in swiftyJson["data"]["second_tour"] {
+            
+            if let name = tmpCandidateJson["name"].string,
+                let color = tmpCandidateJson["color"].string {
+                
+                var tmpCandidate = Candidate(name: self.getConvertedName(name: name), color: color)
+                
+                // data is an array of array
+                // get date + value
+                if let tmpData = tmpCandidateJson["data"].arrayObject as? [[String]]  {
+                    
+                    for currentData in tmpData {
+                        
+                        if let currentDate = self.parseDateformatter.date(from: currentData[0]),
+                            let currentValue = Int(currentData[1]) {
+                            
+                            let newScore = Score(date: currentDate, value: currentValue)
+                            tmpCandidate.data.append(newScore)
+                        }
+                    }
+                    
+                    // sort data by date
+                    tmpCandidate.data.sort { $0.date > $1.date }
+                }
+                
+                self.secondRoundCandidates.append(tmpCandidate)
+            }
+        }
+        
+        self.reloadData()
     }
     
     private func getConvertedName(name: String) -> String {
