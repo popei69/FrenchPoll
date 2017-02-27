@@ -149,6 +149,11 @@ class SecondRoundViewController: UIViewController {
             delegate.showFirstTurn(sender)
         }
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     /*
     // MARK: - Navigation
 

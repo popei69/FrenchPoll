@@ -414,7 +414,12 @@ class CandidateListController: UIViewController, UITableViewDelegate, UITableVie
         alertController.addAction(UIAlertAction(title: NSLocalizedString("Rate it on App Store", comment: "Rate it on App Store"), style: .default, handler: { alertAction in
             
             guard let url = URL(string: AppHelper.storeUrl) else { return }
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                // Fallback on earlier versions
+                UIApplication.shared.openURL(url)
+            }
         }))
         
         alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel"), style: .cancel, handler: { alertAction in
